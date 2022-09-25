@@ -11,7 +11,7 @@ const config = {
         adapter: adapter({
         }),
         paths: {
-            base: dev ? "":"/build"
+            base: dev ? "":"/reverseit-gh.github.io"
         }
     }
 };
