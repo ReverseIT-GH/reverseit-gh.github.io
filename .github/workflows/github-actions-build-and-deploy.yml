@@ -11,6 +11,11 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+      
+      - name: Grab latest library.index.json 📚
+        uses: wei/wget@v1
+        with:
+          args: -O src/lib/data/library/library.index.json https://raw.githubusercontent.com/ReverseIT-GH/library/master/library.index.json
 
       - name: Install and Build 🔧
         run: |
