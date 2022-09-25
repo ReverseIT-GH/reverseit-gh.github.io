@@ -1,0 +1,17 @@
+<script lang="ts">
+    import PageTitle from "$lib/page-title.svelte";
+    import Library from "$lib/library/library.svelte";
+</script>
+
+<PageTitle pageTitle="Library" />
+
+<Library />
+
+<div class="text-sm my-2.5 text-red-600">
+    <p>ATTENZIONE: la categoria "Cracking" contiene esclusivamente documenti riguardanti protezioni ormai obsolete ed estremamante datate.<br>
+        Non è presente alcuna informazione su protezioni commerciali attualmente adoperate.</p>
+</div>
+<div class="text-sm my-2.5 text-red-600">
+    <p>ATTENTION: the "Cracking" category contains only documents concerning protection schemes that are now obsolete and extremely dated.<br>
+        There isn't any information on commercial protections currently used.</p>
+</div>

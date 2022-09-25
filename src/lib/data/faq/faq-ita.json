@@ -1,0 +1,34 @@
+[
+	{
+		"title": "Cosa è ReverseIT?",
+		"content": "<p>E' un progetto che nasce con l'obiettivo di essere un punto di riferimento in ambito di reverse engineering e cyber security, in Italia.</p><p>Puntiamo ad essere un degno successore spirituale della UIC (Università Italiana del Cracking), che ha insegnato a noi italiani l'arte del RE, durante la fine degli anni 90 e il primo decennio del 2000.</p>"
+	},
+    {
+		"title": "Chi gestisce ReverseIT?",
+		"content": "<p>La comunità!</p><p>Anche se esiste un piccolo gruppo di amministrazione, questo progetto vive grazie ai vostri contributi e alle vostre segnalazioni.</p>"
+	},
+    {
+		"title": "E' davvero tutto gratis? Chi paga le spese di hosting?",
+		"content": "<p>Si, è davvero tutto gratis :)</p><p>Non troverai pubblicità su questo sito e non accettiamo donazioni: sarebbe poco corretto nei confronti degli autori originali dei documenti.<br>Dopo aver pensato a lungo su come creare una infrastruttura che sia funzionante, sicura e quasi a costo 0, abbiamo deciso di farci ospitare su GitHub Pages.<br>L'unica parte che richiede un costo è il nome del dominio: tale spesa è interamente sostenuta da <a class='link link-accent' href='https://github.com/Luca1991' target='_blank'>Luca D'Amico</a>.</p>"
+	},
+	{
+		"title": "Che tipo di documenti/articoli possono essere trovati qui?",
+		"content": "<p>Principalmente documenti e articoli che parlano di reverse enginnering, analisi di malware, documentazione di exploit e programmazione low level.</p><p>Non accettiamo documenti che parlino di come unpackare/bypassare sistemi di protezione commerciali attulamente in uso.</p>"
+	},
+    {
+		"title": "Ho scritto un documento/articolo come posso chiederne la pubblicazione?",
+		"content": "<p>Puoi inviare una pull-request al repository della libreria.</p><p>Assicurati prima che il tuo contributo rispetti i requisiti per la pubblicazione.</p>"
+	},
+    {
+		"title": "Ho trovato un documento/articolo scritto da terzi che ritengo sia interessante, può essere aggiunto?",
+		"content": "<p>Si, l'importante è che rispetti i requisiti per la pubblicazione.</p>"
+	},
+    {
+		"title": "Sono l'autore di un documento/articolo presente su questo sito, come posso richiederne l'eliminazione?",
+		"content": "<p>Puoi richiedere l'eliminazione del tuo documento/articolo aprendo una issue sul repository della libreria.</p><p>Ti chiediamo solo di pensarci bene prima: questa è una iniziativa completamente gratuita per diffondere la conoscenza sul reverse engineering e la cyber security, rimuovendo il tuo lavoro negherai a molti interessati la possibilità di imparare.</p>"
+	},
+    {
+		"title": "Ho trovato un problema durante l'uso del sito, come posso segnalarlo?",
+		"content": "<p>Puoi aprire una issue sul repository del sito, <a class='link link-accent' href='https://github.com/ReverseIT-GH/reverseit-gh.github.io/issues'>qui</a>.</p>"
+	}
+]

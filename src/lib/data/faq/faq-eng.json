@@ -1,0 +1,34 @@
+[
+	{
+		"title": "What is ReverseIT?",
+		"content": "<p>It is a project that was born with the aim of being a reference point in the field of reverse engineering and cyber security, in Italy.</p><p>We aim to be a worthy spiritual successor to the UIC (Italian University of Cracking), which taught us Italians the art of RE, during the late 90's and the first decade of 2000.</p>"
+	},
+    {
+		"title": "Who manages ReverseIT?",
+		"content": "<p>The community!</p><p>Although there is a small administration group, this project lives on thanks to your contributions of articles and documents.</p>"
+	},
+    {
+		"title": "Is it really all free? Who pays the hosting fees?",
+		"content": "<p>Yes, it's really all free :)</p><p>You will not find advertising on this site and we do not accept donations: it would be unfair to the original authors of the documents.<br>After much thought about how to create a functional, secure and almost free infrastructure, we decided to be hosted on GitHub Pages.<br>The only part that requires a cost is the domain name: this expense is entirely borne by <a class='link link-accent' href='https://github.com/Luca1991' target='_blank'>Luca D'Amico</a>.</p>"
+    },
+	{
+		"title": "What kind of documents/articles can be found here?",
+		"content": "<p>Mainly documents and articles that talk about reverse engineering, malware analysis, exploit documentation and low level programming.</p><p>We do not accept documents that talk about how to unpack / bypass commercial security systems currently in use.</p>"
+	},
+    {
+		"title": "I've written a document/article, how can I request its publication?",
+		"content": "<p>You can send a pull request to the library repository.</p><p>Make sure your contribution meets the publication requirements.</p>"
+	},
+    {
+		"title": "I've found a document/article written by a third party that I think is interesting, can it be added?",
+		"content": "<p>Yes, the important thing is that it meets the requirements for publication.</p>"
+	},
+    {
+		"title": "I am the author of a document/article on this site, how can I request its deletion?",
+		"content": "<p>You can request the deletion of your document/article by opening an issue on the library repository.</p><p>We just ask you to think about it first: this is a completely free initiative to spread knowledge of reverse engineering and cyber security, by removing your work you will deny many interested parties the opportunity to learn.</p>"
+	},
+    {
+		"title": "I found a problem while using this site, how can I report it?",
+		"content": "<p>You can open an issue on the site repository, <a class='link link-accent' href='https://github.com/ReverseIT-GH/reverseit-gh.github.io/issues'>here</a>.</p>"
+	}
+]

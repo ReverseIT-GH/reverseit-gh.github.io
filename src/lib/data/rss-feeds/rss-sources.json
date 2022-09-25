@@ -1,0 +1,14 @@
+[
+	{
+		"name": "CSHub",
+		"url": "https://corsproxy.io/?https://www.cshub.com/rss/news"
+	},
+    {
+		"name": "TheHackersNews",
+		"url": "https://corsproxy.io/?https://feeds.feedburner.com/TheHackersNews"
+	},
+    {
+		"name": "DarkReading",
+		"url": "https://corsproxy.io/?https://www.darkreading.com/rss.xml"
+	}
+]

@@ -1,0 +1,83 @@
+<script lang="ts">
+    import type { LibraryItem } from "src/types/LibraryItem";
+    import libraryIndex from "$lib/data/library/library.index.json"
+    import LibraryRow from "$lib/library/library-row.svelte"
+    import { page } from '$app/stores';
+    import { onMount } from "svelte";
+
+
+    let libraryItems: LibraryItem[] = libraryIndex;
+    let currentUrl: string;
+    let itemsPerPage: number;
+    let currentPage: number;
+    let searchText: string;
+
+    onMount(() => {
+        currentUrl = $page.url.pathname;
+        itemsPerPage = Number($page.url.searchParams.get('page-items')) || 10;
+        currentPage = Number($page.url.searchParams.get('current-page')) || 1;
+        filterByAuthor($page.url.searchParams.get('author') || "");
+        filterByCategory($page.url.searchParams.get('category') || "");
+        filterByKeywords($page.url.searchParams.get('search') || "");
+    })
+
+    function filterByCategory(category:string) {
+        libraryItems = category? libraryItems.filter(a => a.categories.includes(category)) : libraryItems;
+    }
+
+    function filterByAuthor(author:string) {
+        libraryItems = author? libraryItems.filter(a => a.author === author) : libraryItems;
+    }
+
+    function filterByKeywords(keyword:string) {
+        libraryItems = keyword? libraryItems.filter(a => (a.title.toLowerCase().includes(keyword.toLowerCase()) || a.description.toLowerCase().includes(keyword.toLowerCase()))) : libraryItems;
+    }
+
+    function addQueryParam(param:string, value:any) {
+        if(currentUrl == undefined) {
+            return currentUrl;
+        }
+        const splitUrl: string[] = currentUrl.split("/");
+        const trailPath =  splitUrl[splitUrl.length-1];
+        if(trailPath.includes("?")) {
+            return currentUrl + "&" + param + "=" + value;
+        } else {
+            return currentUrl + "?" + param + "=" + value;
+        };
+    }
+</script>
+
+<div class="my-2.5 flex justify-end">
+    <input type="text" placeholder="Search" class="input input-bordered w-full max-w-xs mx-1.5" bind:value={searchText} />
+    <a class="btn" href="{addQueryParam('search', searchText)}" target="_self">Cerca</a>
+</div>
+
+<div class="overflow-x-auto my-2.5">
+    <table class="table table-compact w-full">
+        <thead>
+            <tr class="text-center">
+                <th>Titolo</th>
+                <th>Descrizione</th>
+                <th>Categorie</th>
+                <th>Autore</th>
+                <th>Lingua</th>
+                <th>Versione</th>
+                <th>Data creazione</th>
+                <th>Data pubblicazione</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#each libraryItems.slice((currentPage-1)*itemsPerPage, (currentPage-1)*itemsPerPage+itemsPerPage) as libraryItem }
+                <LibraryRow libraryItem={libraryItem} addQueryParamFun={(param, value) => addQueryParam(param, value)}/>
+            {/each}
+        </tbody>
+    </table>
+</div>
+
+<div class="btn-group my-2.5 flex justify-end">
+    <a class="btn" class:btn-disabled={currentPage <= 1} href="{addQueryParam('current-page', 1)}" target="_self">«</a>
+    <a class="btn" class:btn-disabled={currentPage <= 1} href="{addQueryParam('current-page', currentPage-1)}" target="_self">‹</a>
+    <a class="btn btn-disabled" href="_blank">{currentPage}/{Math.ceil(libraryItems.length/itemsPerPage)}</a>
+    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href="{addQueryParam('current-page', currentPage+1)}" target="_self">›</a>
+    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href="{addQueryParam('current-page', Math.ceil(libraryItems.length/itemsPerPage))}" target="_self">»</a>
+</div>
