@@ -1,0 +1,2 @@
+GET LATEST library.index.json FROM 
+https://raw.githubusercontent.com/ReverseIT-GH/library/master/library.index.json 
