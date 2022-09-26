@@ -6,7 +6,7 @@
     import { onMount } from "svelte";
 
 
-    let libraryItems: LibraryItem[] = libraryIndex;
+    let libraryItems: LibraryItem[] = libraryIndex.sort((a,b)=> Date.parse(b.publication_date) - Date.parse(a.publication_date));
     let currentUrl: string;
     let itemsPerPage: number;
     let currentPage: number;
