@@ -43,7 +43,7 @@
             return currentUrl + "&" + param + "=" + value;
         } else {
             return currentUrl + "?" + param + "=" + value;
-        };
+        }
     }
 </script>
 
@@ -75,9 +75,9 @@
 </div>
 
 <div class="btn-group my-2.5 flex justify-end">
-    <a class="btn" class:btn-disabled={currentPage <= 1} href="{addQueryParam('current-page', 1)}" target="_self">«</a>
-    <a class="btn" class:btn-disabled={currentPage <= 1} href="{addQueryParam('current-page', currentPage-1)}" target="_self">‹</a>
-    <a class="btn btn-disabled">{currentPage}/{Math.ceil(libraryItems.length/itemsPerPage)}</a>
-    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href="{addQueryParam('current-page', currentPage+1)}" target="_self">›</a>
-    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href="{addQueryParam('current-page', Math.ceil(libraryItems.length/itemsPerPage))}" target="_self">»</a>
+    <a class="btn" class:btn-disabled={currentPage <= 1} href={addQueryParam('current-page', currentPage-currentPage+1)} target="_self">«</a>
+    <a class="btn" class:btn-disabled={currentPage <= 1} href={addQueryParam('current-page', currentPage-1)} target="_self">‹</a>
+    <a class="btn btn-disabled" href={null}>{currentPage}/{Math.ceil(libraryItems.length/itemsPerPage)}</a>
+    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', currentPage+1)} target="_self">›</a>
+    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', Math.ceil(libraryItems.length/itemsPerPage))} target="_self">»</a>
 </div>
