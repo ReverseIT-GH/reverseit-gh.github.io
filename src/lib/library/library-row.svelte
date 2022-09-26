@@ -36,7 +36,9 @@
         <a class="link" href="{addQueryParamFun('author', libraryItem.author)}" target="_self">{libraryItem.author}</a>
     </td>
     <td>
-        <Icon icon={getLocaleIcon(libraryItem.language)}/>
+        <div class="flex justify-center">
+            <Icon icon={getLocaleIcon(libraryItem.language)}/>
+        </div>
     </td>
     <td class="text-center">
         {libraryItem.version}
