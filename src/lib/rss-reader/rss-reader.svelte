@@ -32,7 +32,7 @@
 {#await news}
     <p>Loading...</p>
 {:then rssItems}
-    <ul class="list-disc list-inside text-left px-8">
+    <ul class="list-disc list-outside text-left px-8">
     {#each rssItems as {title, link, pubDate}, index}
         <RssEntry rssTitle={title} rssUrl={link} rssPubDate={pubDate}/> 
     {/each}
