@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { LibraryItem } from "src/types/LibraryItem";
     import libraryIndex from "$lib/data/library/library.index.json"
+    import libraryCategories from "$lib/data/library/categories.json"
     import LibraryRow from "$lib/library/library-row.svelte"
     import { page } from '$app/stores';
     import { onMount } from "svelte";
@@ -11,6 +12,7 @@
     let itemsPerPage: number;
     let currentPage: number;
     let searchText: string;
+    let selectedCategory: string;
 
     onMount(() => {
         currentUrl = $page.url.pathname;
@@ -50,6 +52,16 @@
 <div class="my-2.5 flex justify-end">
     <input type="text" placeholder="Search" class="input input-bordered w-full max-w-xs mx-1.5" bind:value={searchText} />
     <a class="btn" href="{addQueryParam('search', searchText)}" target="_self">Cerca</a>
+</div>
+
+<div class="my-2.5 flex justify-end">
+    <select class="select select-bordered w-full max-w-xs mx-1.5" bind:value={selectedCategory}>
+        <option disabled selected>Scegli categoria</option>
+        {#each libraryCategories as libraryCategory}
+            <option>{libraryCategory}</option>
+        {/each}
+      </select>
+    <a class="btn" class:btn-disabled={!libraryCategories.includes(selectedCategory)} href="{addQueryParam('category', selectedCategory)}" target="_self">Seleziona</a>
 </div>
 
 <div class="overflow-x-auto my-2.5">
