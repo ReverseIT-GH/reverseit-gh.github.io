@@ -93,3 +93,7 @@
     <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', currentPage+1)} target="_self">›</a>
     <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', Math.ceil(libraryItems.length/itemsPerPage))} target="_self">»</a>
 </div>
+
+<div class="text-center mt-4 mb-6">
+    <p>Numero totale di documenti: {libraryItems.length}</p>
+</div>
