@@ -94,6 +94,11 @@
     <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', Math.ceil(libraryItems.length/itemsPerPage))} target="_self">»</a>
 </div>
 
-<div class="text-center mt-4 mb-6">
-    <p>Numero totale di documenti: {libraryItems.length}</p>
+<div class="text-center mt-4 mb-8">
+    <div class="stats shadow">
+        <div class="stat">
+            <div class="stat-title">Numero totale di documenti:</div>
+            <div class="stat-value">{libraryItems.length}</div>
+        </div>
+    </div>
 </div>
