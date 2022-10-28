@@ -27,7 +27,7 @@
           più grande sito italiano di reverse engineering creato all'alba del nuovo millennio: la UIC (Università Italiana del Cracking).</p>
         <p>Qui troverai documenti, articoli e papers tecnici su reverse engineering, malware analysis, OS internals, low level programming, 
           cyber security e molto altro, in lingua italiana o inglese.</p>
-        <p>Essendo una iniziativa gestita dalla comunità, se invitato a prenderne parte, pubblicando i tuoi articoli o segnalando
+        <p>Essendo una iniziativa gestita dalla comunità, sei invitato a prenderne parte, pubblicando i tuoi articoli o segnalando
           quelli che ritieni degni di nota e pertinenti alle tematiche trattate!</p>
       </div>
     </div>
