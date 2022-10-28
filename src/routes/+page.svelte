@@ -1,4 +1,5 @@
 <script lang="ts">
+    import LibraryWidget from "$lib/library-widget/library-widget.svelte";
     import RssReader from "$lib/rss-reader/rss-reader.svelte";
 </script>
 
@@ -24,7 +25,7 @@
   <div class="flex w-full">
     <div class="grid w-1/2 h-40 card bg-base-300 rounded-box place-items-center overflow-y-auto">
       <h2 class="my-2">Latest Library Contents:</h2>
-      TODO Library widget
+      <LibraryWidget />
     </div>
     <div class="divider divider-horizontal" />
     <div class="grid w-1/2 h-40 card bg-base-300 rounded-box place-items-center overflow-y-auto">
