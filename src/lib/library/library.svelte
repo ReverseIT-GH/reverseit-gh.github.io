@@ -8,14 +8,14 @@
 
 
     let libraryItems: LibraryItem[] = libraryIndex.sort((a,b)=> Date.parse(b.publication_date) - Date.parse(a.publication_date));
-    let currentUrl: string;
+    let currentUrl: URL;
     let itemsPerPage: number;
     let currentPage: number;
     let searchText: string;
     let selectedCategory: string;
 
     onMount(() => {
-        currentUrl = $page.url.pathname;
+        currentUrl = $page.url;
         itemsPerPage = Number($page.url.searchParams.get('page-items')) || 10;
         currentPage = Number($page.url.searchParams.get('current-page')) || 1;
         filterByAuthor($page.url.searchParams.get('author') || "");
@@ -39,13 +39,9 @@
         if(currentUrl == undefined) {
             return currentUrl;
         }
-        const splitUrl: string[] = currentUrl.split("/");
-        const trailPath =  splitUrl[splitUrl.length-1];
-        if(trailPath.includes("?")) {
-            return currentUrl + "&" + param + "=" + value;
-        } else {
-            return currentUrl + "?" + param + "=" + value;
-        }
+        let newUrl: URL = new URL(currentUrl);
+        newUrl.searchParams.set(param, value);
+        return String(newUrl);
     }
 </script>
 
