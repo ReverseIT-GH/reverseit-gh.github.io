@@ -35,11 +35,16 @@
         libraryItems = keyword? libraryItems.filter(a => (a.title.toLowerCase().includes(keyword.toLowerCase()) || a.description.toLowerCase().includes(keyword.toLowerCase()))) : libraryItems;
     }
 
-    function addQueryParam(param:string, value:any) {
+    function addQueryParam(param:string, value:any, deleteOtherParams: boolean) {
         if(currentUrl == undefined) {
             return currentUrl;
         }
         let newUrl: URL = new URL(currentUrl);
+        if(deleteOtherParams) {
+            newUrl.searchParams.forEach((value, key) => {
+                newUrl.searchParams.delete(key);
+            });
+        }
         newUrl.searchParams.set(param, value);
         return String(newUrl);
     }
@@ -47,7 +52,7 @@
 
 <div class="my-2.5 flex justify-end">
     <input type="text" placeholder="Search" class="input input-bordered w-full max-w-xs mx-1.5" bind:value={searchText} />
-    <a class="btn" href="{addQueryParam('search', searchText)}" target="_self">Cerca</a>
+    <a class="btn" href="{addQueryParam('search', searchText, true)}" target="_self">Cerca</a>
 </div>
 
 <div class="my-2.5 flex justify-end">
@@ -57,7 +62,7 @@
             <option>{libraryCategory}</option>
         {/each}
       </select>
-    <a class="btn" class:btn-disabled={!libraryCategories.includes(selectedCategory)} href="{addQueryParam('category', selectedCategory)}" target="_self">Seleziona</a>
+    <a class="btn" class:btn-disabled={!libraryCategories.includes(selectedCategory)} href="{addQueryParam('category', selectedCategory, true)}" target="_self">Seleziona</a>
 </div>
 
 <div class="overflow-x-auto my-2.5">
