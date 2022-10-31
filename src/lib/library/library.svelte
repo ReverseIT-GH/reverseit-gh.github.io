@@ -76,25 +76,25 @@
         </thead>
         <tbody>
             {#each libraryItems.slice((currentPage-1)*itemsPerPage, (currentPage-1)*itemsPerPage+itemsPerPage) as libraryItem }
-                <LibraryRow libraryItem={libraryItem} addQueryParamFun={(param, value) => addQueryParam(param, value)}/>
+                <LibraryRow libraryItem={libraryItem} addQueryParamFun={(param, value, flag) => addQueryParam(param, value, flag)}/>
             {/each}
         </tbody>
     </table>
 </div>
 
 <div class="btn-group my-2.5 flex justify-end">
-    <a class="btn" class:btn-disabled={currentPage <= 1} href={addQueryParam('current-page', currentPage-currentPage+1)} target="_self">«</a>
-    <a class="btn" class:btn-disabled={currentPage <= 1} href={addQueryParam('current-page', currentPage-1)} target="_self">‹</a>
+    <a class="btn" class:btn-disabled={currentPage <= 1} href={addQueryParam('current-page', currentPage-currentPage+1, false)} target="_self">«</a>
+    <a class="btn" class:btn-disabled={currentPage <= 1} href={addQueryParam('current-page', currentPage-1, false)} target="_self">‹</a>
     <a class="btn btn-disabled" href={null}>{currentPage}/{Math.ceil(libraryItems.length/itemsPerPage)}</a>
-    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', currentPage+1)} target="_self">›</a>
-    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', Math.ceil(libraryItems.length/itemsPerPage))} target="_self">»</a>
+    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', currentPage+1, false)} target="_self">›</a>
+    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', Math.ceil(libraryItems.length/itemsPerPage), false)} target="_self">»</a>
 </div>
 
 <div class="text-center mt-4 mb-8">
     <div class="stats shadow">
         <div class="stat">
             <div class="stat-title">Numero totale di documenti:</div>
-            <div class="stat-value">{libraryItems.length}</div>
+            <div class="stat-value">{libraryIndex.length}</div>
         </div>
     </div>
 </div>
