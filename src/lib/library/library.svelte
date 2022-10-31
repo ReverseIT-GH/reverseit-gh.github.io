@@ -41,7 +41,7 @@
         }
         let newUrl: URL = new URL(currentUrl);
         if(deleteOtherParams) {
-            newUrl.searchParams.forEach((value, key) => {
+            currentUrl.searchParams.forEach((value, key) => {
                 newUrl.searchParams.delete(key);
             });
         }
