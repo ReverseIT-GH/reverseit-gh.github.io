@@ -4,16 +4,10 @@
   import Footer from '$lib/footer.svelte'
 </script>
 
-<div class="root">
+<div class="overflow-none flex flex-col w-screen h-screen">
     <Header />
-    <main>
+    <main class="p-3 flex-1 relative overflow-scroll">
       <slot></slot>
     </main>
     <Footer />
 </div>
-
-<style>
-  .root {
-        padding: 1%;
-    }
-</style>

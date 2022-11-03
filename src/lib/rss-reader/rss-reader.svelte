@@ -29,14 +29,16 @@
     })();
 </script>
 
-{#await news}
-    <p>Loading...</p>
-{:then rssItems}
-    <ul class="list-disc list-outside text-left px-8">
-    {#each rssItems as {title, link, pubDate}, index}
-        <RssEntry rssTitle={title} rssUrl={link} rssPubDate={pubDate}/> 
-    {/each}
-    </ul>
-{:catch error}
-    <p>RSS Error</p>
-{/await}
+<div class="text-sm">
+    {#await news}
+        <div>Loading...</div>
+    {:then rssItems}
+        <ul class="list-disc list-outside text-left px-8">
+            {#each rssItems as {title, link, pubDate}, index}
+                <RssEntry rssTitle={title} rssUrl={link} rssPubDate={pubDate}/> 
+            {/each}
+        </ul>
+    {:catch error}
+        <div class="text-error">RSS Error</div>
+    {/await}
+</div>
