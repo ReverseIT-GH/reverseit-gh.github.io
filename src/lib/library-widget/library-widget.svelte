@@ -1,5 +1,5 @@
 <script lang="ts">
-    import libraryIndex from "$lib/data/library/library.index.json 
+    import libraryIndex from "$lib/data/library/library.index.json";
     import type { LibraryItem } from "src/types/LibraryItem";
     let libraryItems: LibraryItem[] = libraryIndex.slice(-10).reverse();
 </script>
