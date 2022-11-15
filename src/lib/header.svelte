@@ -1,10 +1,19 @@
 <script lang="ts">
     import { base } from '$app/paths';
+    let availableLogos: string[] = [
+        'cfrevolution.png',
+        'monsters.png',
+        'wholecar.png'
+    ];
+
+    function getRandomLogo() {
+        return availableLogos[Math.floor(Math.random() * availableLogos.length)];
+    }
 </script>
 
 <div class="navbar bg-base-200">
     <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl" href="{base}/">ReverseIT</a>
+        <a href="{base}/"><img src="header_logo/{getRandomLogo()}" alt="ReverseIT"></a>
     </div>
     <div class="flex-none">
         <ul class="menu menu-horizontal p-0">
