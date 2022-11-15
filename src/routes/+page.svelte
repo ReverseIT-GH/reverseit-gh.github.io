@@ -25,6 +25,6 @@
     <div class="divider md:divider-horizontal"/>
     <div class="p-2 flex-1 card bg-base-300">
         <h2 class="font-bold">Latest CyberSec News:</h2>
-        <RssReader />
+        <RssReader maxItemsNo={50} />
     </div>
 </div>

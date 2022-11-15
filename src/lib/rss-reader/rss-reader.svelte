@@ -3,6 +3,7 @@
     import rssSources from '$lib/data/rss-feeds/rss-sources.json';
 	import RssEntry from './rss-entry.svelte';
     import type { RssItem } from 'src/types/RssItem'
+    export let maxItemsNo = 0;
 
 
     async function fetchRssSource(rssSource: any){  
@@ -25,7 +26,7 @@
             const items: RssItem[] = await fetchRssSource(rssSource);
             rssItems = rssItems.concat(items);
         }
-        return sortRssItems(rssItems);
+        return sortRssItems(rssItems).slice(0, maxItemsNo);
     })();
 </script>
 
