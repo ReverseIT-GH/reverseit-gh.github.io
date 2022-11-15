@@ -1,7 +1,8 @@
 <script lang="ts">
     import libraryIndex from "$lib/data/library/library.index.json";
     import type { LibraryItem } from "src/types/LibraryItem";
-    let libraryItems: LibraryItem[] = libraryIndex.slice(-10).reverse();
+    export let maxItemsNo = 0;
+    let libraryItems: LibraryItem[] = libraryIndex.slice(-maxItemsNo).reverse();
 </script>
 
 <ul class="text-sm list-disc list-outside text-left px-8">
