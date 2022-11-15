@@ -19,12 +19,12 @@
 
 <div class="mt-3 flex flex-col md:flex-row gap-y-2 md:gap-y-auto">
     <div class="p-2 flex-1 card bg-base-300">
-        <h2 class="font-bold">Latest Library Contents:</h2>
+        <h2 class="font-bold text-center">Latest Library Contents</h2>
         <LibraryWidget maxItemsNo={50} />
     </div>
     <div class="divider md:divider-horizontal"/>
     <div class="p-2 flex-1 card bg-base-300">
-        <h2 class="font-bold">Latest CyberSec News:</h2>
+        <h2 class="font-bold text-center">Latest CyberSec News</h2>
         <RssReader maxItemsNo={50} />
     </div>
 </div>
