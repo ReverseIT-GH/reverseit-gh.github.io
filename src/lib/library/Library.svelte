@@ -51,19 +51,20 @@
 </script>
 
 <div class="my-2.5 flex justify-end">
-    <input type="text" placeholder="Search" class="input input-bordered w-full max-w-xs mx-1.5" bind:value={searchText} />
-    <a class="btn" href="{addQueryParam('search', searchText, true)}" target="_self">Cerca</a>
+    <input type="text" placeholder="Search" class="input input-bordered mx-1.5 w-48" bind:value={searchText} />
+    <a class="btn mx-2 w-28" href="{addQueryParam('search', searchText, true)}" target="_self">Cerca</a>
 </div>
 
 <div class="my-2.5 flex justify-end">
-    <select class="select select-bordered w-full max-w-xs mx-1.5" bind:value={selectedCategory}>
+    <select class="select select-bordered mx-1.5 w-48" bind:value={selectedCategory}>
         <option disabled selected>Scegli categoria</option>
         {#each libraryCategories as libraryCategory}
             <option>{libraryCategory}</option>
         {/each}
       </select>
-    <a class="btn" class:btn-disabled={!libraryCategories.includes(selectedCategory)} href="{addQueryParam('category', selectedCategory, true)}" target="_self">Seleziona</a>
+    <a class="btn mx-2 w-28" class:btn-disabled={!libraryCategories.includes(selectedCategory)} href="{addQueryParam('category', selectedCategory, true)}" target="_self">Seleziona</a>
 </div>
+
 
 <div class="overflow-x-auto my-2.5">
     <table class="table table-compact w-full">
