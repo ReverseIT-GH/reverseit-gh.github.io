@@ -8,11 +8,15 @@
 
     async function fetchRssSource(rssSource: any){  
         let sourceItems: RssItem[] = [];
-        const feed = await parse(rssSource.url);
-        feed.items.forEach(item => {
-           let rssItem: RssItem = {title: item.title, link: item.link, pubDate: item.created};
-           sourceItems.push(rssItem);
-        });
+        try {
+            const feed = await parse(rssSource.url);
+            feed.items.forEach(item => {
+            let rssItem: RssItem = {title: item.title, link: item.link, pubDate: item.created};
+            sourceItems.push(rssItem);
+            });
+        } catch(e: any) {
+            console.log("[RSS] Fetching of: " + rssSource.name + " failed with error: " + e.message);
+        }
         return sourceItems;
     }
 
