@@ -32,7 +32,7 @@
             <a class="link" href="{addQueryParamFun('category', category, true)}" target="_self">{category}</a><br>
         {/each}
     </td>
-    <td>
+    <td class="text-center">
         <a class="link" href="{addQueryParamFun('author', libraryItem.author, true)}" target="_self">{libraryItem.author}</a>
     </td>
     <td>
