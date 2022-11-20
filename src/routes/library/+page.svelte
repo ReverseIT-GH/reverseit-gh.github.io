@@ -1,6 +1,6 @@
 <script lang="ts">
-    import PageTitle from "$lib/page-title.svelte";
-    import Library from "$lib/library/library.svelte";
+    import PageTitle from "$lib/PageTitle.svelte";
+    import Library from "$lib/library/Library.svelte";
 </script>
 
 <PageTitle pageTitle="Library" />

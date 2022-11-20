@@ -1,7 +1,7 @@
 <script lang="ts">
     import parse from 'rss-to-json';
     import rssSources from '$lib/data/rss-feeds/rss-sources.json';
-	import RssEntry from './rss-entry.svelte';
+	import RssEntry from './RssEntry.svelte';
     import type { RssItem } from 'src/types/RssItem'
     export let maxItemsNo = 0;
 

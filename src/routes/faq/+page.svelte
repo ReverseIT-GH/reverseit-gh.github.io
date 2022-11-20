@@ -1,6 +1,6 @@
 <script lang="ts">
-    import PageTitle from "$lib/page-title.svelte";
-    import FaqEntry from '$lib/faq-entry.svelte';
+    import PageTitle from "$lib/PageTitle.svelte";
+    import FaqEntry from '$lib/FaqEntry.svelte';
     import faqIta from '$lib/data/faq/faq-ita.json';
     import faqEng from '$lib/data/faq/faq-eng.json';
     import Icon from '@iconify/svelte';

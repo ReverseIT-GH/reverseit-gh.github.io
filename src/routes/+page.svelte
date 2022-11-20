@@ -1,6 +1,6 @@
 <script lang="ts">
-    import LibraryWidget from "$lib/library-widget/library-widget.svelte";
-    import RssReader from "$lib/rss-reader/rss-reader.svelte";
+    import LibraryWidget from "$lib/library-widget/LibraryWidget.svelte";
+    import RssReader from "$lib/rss-reader/RssReader.svelte";
 </script>
 
 <div class="flex w-full">

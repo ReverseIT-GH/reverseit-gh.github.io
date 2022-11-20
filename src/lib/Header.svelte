@@ -11,7 +11,7 @@
     }
 </script>
 
-<div class="navbar bg-base-200">
+<div class="navbar mb-4 bg-base-200">
     <div class="flex-1">
         <a href="{base}/"><img src="header_logo/{getRandomLogo()}" alt="ReverseIT"></a>
     </div>
@@ -23,9 +23,3 @@
         </ul>
     </div>
 </div>
-
-<style>
-    .navbar {
-        margin-bottom: 1%;
-    }
-</style>

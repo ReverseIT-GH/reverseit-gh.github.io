@@ -2,7 +2,7 @@
     import type { LibraryItem } from "src/types/LibraryItem";
     import libraryIndex from "$lib/data/library/library.index.json"
     import libraryCategories from "$lib/data/library/categories.json"
-    import LibraryRow from "$lib/library/library-row.svelte"
+    import LibraryRow from "$lib/library/LibraryRow.svelte"
     import { page } from '$app/stores';
     import { onMount } from "svelte";
 
