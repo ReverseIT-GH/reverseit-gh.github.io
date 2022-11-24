@@ -1,7 +1,6 @@
 name: Build and Deploy to GitHub Pages
 on:
-  schedule:
-    - cron: '0 22 * * *' # 00:00 CEST
+  workflow_dispatch:
   push:
     branches:
       - master
