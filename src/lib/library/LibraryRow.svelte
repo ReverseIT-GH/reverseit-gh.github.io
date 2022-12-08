@@ -22,7 +22,7 @@
 
 <tr class="hover">
     <td>
-        <a class="link" href="{libraryItem.download_url}" target='_blank'>{libraryItem.title}</a>
+        <a class="link" href="{libraryItem.download_url}" target="_blank" rel="noreferrer">{libraryItem.title}</a>
     </td>
     <td>
         {libraryItem.description}

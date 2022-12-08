@@ -11,7 +11,8 @@
         <a class="tooltip inline"
            data-tip="{new Date(Date.parse(libraryItem.publication_date)).toLocaleDateString()}"
            href="{libraryItem.download_url}"
-           target="_blank">{@html libraryItem.title}</a>
+           target="_blank"
+           rel="noreferrer">{@html libraryItem.title}</a>
     </li>
     {/each}
 </ul>

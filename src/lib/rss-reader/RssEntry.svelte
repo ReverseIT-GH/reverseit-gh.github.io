@@ -5,5 +5,5 @@
 </script>
 
 <li class="my-1">
-    <a class="tooltip inline" data-tip="{new Date(rssPubDate).toLocaleString()}" href="{rssUrl}" target="_blank">{@html rssTitle}</a>
+    <a class="tooltip inline" data-tip="{new Date(rssPubDate).toLocaleString()}" href="{rssUrl}" target="_blank" rel="noreferrer">{@html rssTitle}</a>
 </li>
