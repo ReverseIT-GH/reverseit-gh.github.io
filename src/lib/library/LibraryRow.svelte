@@ -21,10 +21,10 @@
 </script>
 
 <tr class="hover">
-    <td>
+    <td class="min-w-[12rem] whitespace-normal">
         <a class="link" href="{libraryItem.download_url}" target="_blank" rel="noreferrer">{libraryItem.title}</a>
     </td>
-    <td>
+    <td class="min-w-[12rem] whitespace-normal">
         {libraryItem.description}
     </td>
     <td class="text-center">

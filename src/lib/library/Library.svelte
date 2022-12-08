@@ -104,3 +104,9 @@
         </div>
     </div>
 </div>
+
+<style>
+.table th:first-child { /* This hack is needed as a workaround. Issue: https://github.com/saadeghi/daisyui/issues/665 */
+     position: relative !important;
+}
+</style>
