@@ -1,11 +1,12 @@
 <script lang="ts">
     import LibraryWidget from "$lib/library-widget/LibraryWidget.svelte";
     import RssReader from "$lib/rss-reader/RssReader.svelte";
+    import Icon from '@iconify/svelte';
 </script>
 
 <div class="flex w-full">
     <div class="flex-grow card bg-base-300 rounded-box place-items-center">
-        <div class="px-8 py-4 text-sm">
+        <div class="px-8 py-2 text-sm">
             <h1 class="my-2">Benvenuto su ReverseIT</h1>
             <p>Questo progetto nasce con uno scopo ben preciso: essere il successore spirituale del 
             più grande sito italiano di reverse engineering creato all'alba del nuovo millennio: la UIC (Università Italiana del Cracking).</p>
@@ -13,6 +14,11 @@
             cyber security e molto altro, in lingua italiana o inglese.</p>
             <p>Essendo una iniziativa gestita dalla comunità, sei invitato a prenderne parte, pubblicando i tuoi articoli o segnalando
             quelli che ritieni degni di nota e pertinenti alle tematiche trattate!</p>
+        </div>
+        <div class="flex place-items-center">
+            <a class="m-4" href="https://www.reddit.com/r/ReverseIT/"> <Icon icon="logos:reddit-icon" width="48" /> </a>
+            <a class="m-4" href="https://twitter.com/ReverseIT_space"> <Icon icon="logos:twitter" width="48" /> </a>
+            <a class="m-4" href="https://github.com/ReverseIT-GH"> <Icon icon="logos:github-icon" width="48" /> </a>
         </div>
     </div>
 </div>
