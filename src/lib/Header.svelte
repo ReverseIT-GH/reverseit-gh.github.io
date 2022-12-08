@@ -10,7 +10,6 @@
     const randomLogo = getRandomLogo();
 
     async function getRandomLogo() {
-        console.log('getRandomLogo called!');
         return availableLogos[Math.floor(Math.random() * availableLogos.length)];
     }
 </script>
