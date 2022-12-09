@@ -8,8 +8,8 @@
     <div class="flex-grow card bg-base-300 rounded-box place-items-center">
         <div class="px-8 py-2 text-sm">
             <h1 class="my-2">Benvenuto su ReverseIT</h1>
-            <p>Questo progetto nasce con uno scopo ben preciso: essere il successore spirituale del 
-            più grande sito italiano di reverse engineering creato all'alba del nuovo millennio: la UIC (Università Italiana del Cracking).</p>
+            <p>Questo progetto nasce con uno scopo ben preciso, essere il successore spirituale del 
+            più grande sito italiano di reverse engineering creato all'alba del nuovo millennio, la UIC (Università Italiana del Cracking).</p>
             <p>Qui troverai documenti, articoli e papers tecnici su reverse engineering, malware analysis, OS internals, low level programming, 
             cyber security e molto altro, in lingua italiana o inglese.</p>
             <p>Essendo una iniziativa gestita dalla comunità, sei invitato a prenderne parte, pubblicando i tuoi articoli o segnalando
