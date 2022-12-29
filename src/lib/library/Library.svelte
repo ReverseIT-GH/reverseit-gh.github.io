@@ -3,56 +3,39 @@
     import libraryIndex from "$lib/data/library/library.index.json"
     import libraryCategories from "$lib/data/library/categories.json"
     import LibraryRow from "$lib/library/LibraryRow.svelte"
-    import { page } from '$app/stores';
-    import { onMount } from "svelte";
 
-
-    let libraryItems: LibraryItem[] = libraryIndex.sort((a,b)=> Date.parse(b.publication_date) - Date.parse(a.publication_date));
-    let currentUrl: URL;
-    let itemsPerPage: number;
-    let currentPage: number;
-    let searchText: string;
-    let selectedCategory: string;
-
-    onMount(() => {
-        currentUrl = $page.url;
-        itemsPerPage = Number($page.url.searchParams.get('page-items')) || 10;
-        currentPage = Number($page.url.searchParams.get('current-page')) || 1;
-        filterByAuthor($page.url.searchParams.get('author') || "");
-        filterByCategory($page.url.searchParams.get('category') || "");
-        filterByKeywords($page.url.searchParams.get('search') || "");
-    })
+    const orderedLibraryIndex = libraryIndex.sort((a,b)=> Date.parse(b.publication_date) - Date.parse(a.publication_date));
+    const itemsPerPage: number = 10;
+    let libraryItems: LibraryItem[] = orderedLibraryIndex;
+    let currentPage: number = 1;
+    let searchText: string = "";
+    let selectedCategory: string = "Scegli categoria";
 
     function filterByCategory(category:string) {
-        libraryItems = category? libraryItems.filter(a => a.categories.includes(category)) : libraryItems;
+        libraryItems = libraryCategories.includes(category)? orderedLibraryIndex.filter(a => a.categories.includes(category)) : orderedLibraryIndex;
+        currentPage = 1;
+        selectedCategory = "Scegli categoria";
     }
 
     function filterByAuthor(author:string) {
-        libraryItems = author? libraryItems.filter(a => a.author === author) : libraryItems;
+        libraryItems = author? orderedLibraryIndex.filter(a => a.author === author) : orderedLibraryIndex;
+        currentPage = 1;
     }
 
     function filterByKeywords(keyword:string) {
-        libraryItems = keyword? libraryItems.filter(a => (a.title.toLowerCase().includes(keyword.toLowerCase()) || a.description.toLowerCase().includes(keyword.toLowerCase()))) : libraryItems;
+        libraryItems = keyword? orderedLibraryIndex.filter(a => (a.title.toLowerCase().includes(keyword.toLowerCase()) || a.description.toLowerCase().includes(keyword.toLowerCase()))) : orderedLibraryIndex;
+        currentPage = 1;
+        searchText = "";
     }
 
-    function addQueryParam(param:string, value:any, deleteOtherParams: boolean) {
-        if(currentUrl == undefined) {
-            return currentUrl;
-        }
-        let newUrl: URL = new URL(currentUrl);
-        if(deleteOtherParams) {
-            currentUrl.searchParams.forEach((value, key) => {
-                newUrl.searchParams.delete(key);
-            });
-        }
-        newUrl.searchParams.set(param, value);
-        return String(newUrl);
+    function changePage(pageIndex:number) {
+        currentPage = pageIndex;
     }
 </script>
 
 <div class="my-2.5 flex justify-end">
     <input type="text" placeholder="Search" class="input input-bordered mx-1.5 w-48" bind:value={searchText} />
-    <a class="btn mx-2 w-28" href="{addQueryParam('search', searchText, true)}" target="_self">Cerca</a>
+    <button class="btn mx-2 w-28" on:click="{() => filterByKeywords(searchText)}">Cerca</button>
 </div>
 
 <div class="my-2.5 flex justify-end">
@@ -62,9 +45,8 @@
             <option>{libraryCategory}</option>
         {/each}
       </select>
-    <a class="btn mx-2 w-28" class:btn-disabled={!libraryCategories.includes(selectedCategory)} href="{addQueryParam('category', selectedCategory, true)}" target="_self">Seleziona</a>
+    <button class="btn mx-2 w-28" class:btn-disabled={!libraryCategories.includes(selectedCategory)} on:click="{() => filterByCategory(selectedCategory)}">Seleziona</button>
 </div>
-
 
 <div class="overflow-x-auto my-2.5">
     <table class="table table-compact w-full">
@@ -82,18 +64,21 @@
         </thead>
         <tbody>
             {#each libraryItems.slice((currentPage-1)*itemsPerPage, (currentPage-1)*itemsPerPage+itemsPerPage) as libraryItem }
-                <LibraryRow libraryItem={libraryItem} addQueryParamFun={(param, value, flag) => addQueryParam(param, value, flag)}/>
+                <LibraryRow
+                    libraryItem={libraryItem}
+                    filterByAuthor={(author) => filterByAuthor(author)}
+                    filterByCategory={(category) => filterByCategory(category)}/>
             {/each}
         </tbody>
     </table>
 </div>
 
 <div class="btn-group my-2.5 flex justify-end">
-    <a class="btn" class:btn-disabled={currentPage <= 1} href={addQueryParam('current-page', currentPage-currentPage+1, false)} target="_self">«</a>
-    <a class="btn" class:btn-disabled={currentPage <= 1} href={addQueryParam('current-page', currentPage-1, false)} target="_self">‹</a>
-    <a class="btn btn-disabled" href={null}>{currentPage}/{Math.ceil(libraryItems.length/itemsPerPage)}</a>
-    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', currentPage+1, false)} target="_self">›</a>
-    <a class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} href={addQueryParam('current-page', Math.ceil(libraryItems.length/itemsPerPage), false)} target="_self">»</a>
+    <button class="btn" class:btn-disabled={currentPage <= 1} on:click={() => changePage(currentPage-currentPage+1)}>«</button>
+    <button class="btn" class:btn-disabled={currentPage <= 1} on:click={() => changePage(currentPage-1)}>‹</button>
+    <button class="btn btn-disabled" on:click={null}>{currentPage}/{Math.ceil(libraryItems.length/itemsPerPage)}</button>
+    <button class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} on:click={() => changePage(currentPage+1)}>›</button>
+    <button class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} on:click={() => changePage(Math.ceil(libraryItems.length/itemsPerPage))}>»</button>
 </div>
 
 <div class="text-center mt-4 mb-8">

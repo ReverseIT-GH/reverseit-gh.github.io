@@ -3,7 +3,8 @@
     import Icon from '@iconify/svelte';
 
     export let libraryItem: LibraryItem;
-    export let addQueryParamFun = (param:string, value:any, deleteOtherParams:boolean) => {}
+    export let filterByAuthor = (author:string) => {}
+    export let filterByCategory = (category:string) => {}
 
     function getLocaleIcon(locale: string) {
         switch(locale) { 
@@ -29,11 +30,11 @@
     </td>
     <td class="text-center">
         {#each libraryItem.categories as category}
-            <a class="link" href="{addQueryParamFun('category', category, true)}" target="_self">{category}</a><br>
+            <button class="link" on:click="{() => filterByCategory(category)}">{category}</button><br>
         {/each}
     </td>
     <td class="text-center">
-        <a class="link" href="{addQueryParamFun('author', libraryItem.author, true)}" target="_self">{libraryItem.author}</a>
+        <button class="link" on:click="{() => filterByAuthor(libraryItem.author)}">{libraryItem.author}</button>
     </td>
     <td>
         <div class="flex justify-center">
