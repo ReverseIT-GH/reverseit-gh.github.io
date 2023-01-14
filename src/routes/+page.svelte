@@ -16,9 +16,15 @@
             quelli che ritieni degni di nota e pertinenti alle tematiche trattate!</p>
         </div>
         <div class="flex place-items-center">
-            <a class="m-4" href="https://www.reddit.com/r/ReverseIT/"> <Icon icon="logos:reddit-icon" width="48" /> </a>
-            <a class="m-4" href="https://twitter.com/ReverseIT_space"> <Icon icon="logos:twitter" width="48" /> </a>
-            <a class="m-4" href="https://github.com/ReverseIT-GH"> <Icon icon="logos:github-icon" width="48" /> </a>
+            <a class="m-4" href="https://www.reddit.com/r/ReverseIT/" target="_blank" rel="noreferrer">
+                <Icon icon="logos:reddit-icon" width="48" /> 
+            </a>
+            <a class="m-4" href="https://twitter.com/ReverseIT_space" target="_blank" rel="noreferrer">
+                <Icon icon="logos:twitter" width="48" />
+            </a>
+            <a class="m-4" href="https://github.com/ReverseIT-GH" target="_blank" rel="noreferrer">
+                <Icon icon="logos:github-icon" width="48" />
+            </a>
         </div>
     </div>
 </div>
