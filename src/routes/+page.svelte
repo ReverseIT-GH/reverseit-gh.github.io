@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex w-full">
-    <div class="flex-grow card bg-base-300 rounded-box place-items-center">
+    <div class="grow card bg-base-300 rounded-box place-items-center">
         <div class="px-8 py-2 text-sm">
             <h1 class="my-2">Benvenuto su ReverseIT</h1>
             <p>Questo progetto nasce con uno scopo ben preciso, essere il successore spirituale del 

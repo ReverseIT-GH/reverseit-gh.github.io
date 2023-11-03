@@ -35,7 +35,7 @@
 
 <div class="my-2.5 flex justify-end">
     <input type="text" placeholder="Search" class="input input-bordered mx-1.5 w-48" bind:value={searchText} />
-    <button class="btn mx-2 w-28" on:click="{() => filterByKeywords(searchText)}">Cerca</button>
+    <button class="btn btn-neutral mx-2 w-28" on:click="{() => filterByKeywords(searchText)}">Cerca</button>
 </div>
 
 <div class="my-2.5 flex justify-end">
@@ -45,21 +45,21 @@
             <option>{libraryCategory}</option>
         {/each}
       </select>
-    <button class="btn mx-2 w-28" class:btn-disabled={!libraryCategories.includes(selectedCategory)} on:click="{() => filterByCategory(selectedCategory)}">Seleziona</button>
+    <button class="btn btn-neutral mx-2 w-28" class:btn-disabled={!libraryCategories.includes(selectedCategory)} on:click="{() => filterByCategory(selectedCategory)}">Seleziona</button>
 </div>
 
-<div class="overflow-x-auto my-2.5">
-    <table class="table table-compact w-full">
+<div class="overflow-x-auto my-2.5 rounded-t-lg rounded-b-lg">
+    <table class="table table-sm">
         <thead>
-            <tr class="text-center">
+            <tr class="text-center uppercase text-sm bg-base-200">
                 <th>Titolo</th>
                 <th>Descrizione</th>
                 <th>Categorie</th>
                 <th>Autore</th>
                 <th>Lingua</th>
                 <th>Versione</th>
-                <th>Data creazione</th>
-                <th>Data pubblicazione</th>
+                <th>Creazione</th>
+                <th>Pubblicazione</th>
             </tr>
         </thead>
         <tbody>
@@ -74,11 +74,11 @@
 </div>
 
 <div class="btn-group my-2.5 flex justify-end">
-    <button class="btn" class:btn-disabled={currentPage <= 1} on:click={() => changePage(currentPage-currentPage+1)}>«</button>
-    <button class="btn" class:btn-disabled={currentPage <= 1} on:click={() => changePage(currentPage-1)}>‹</button>
+    <button class="btn btn-neutral" class:btn-disabled={currentPage <= 1} on:click={() => changePage(currentPage-currentPage+1)}>«</button>
+    <button class="btn btn-neutral" class:btn-disabled={currentPage <= 1} on:click={() => changePage(currentPage-1)}>‹</button>
     <button class="btn btn-disabled" on:click={null}>{currentPage}/{Math.ceil(libraryItems.length/itemsPerPage)}</button>
-    <button class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} on:click={() => changePage(currentPage+1)}>›</button>
-    <button class="btn" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} on:click={() => changePage(Math.ceil(libraryItems.length/itemsPerPage))}>»</button>
+    <button class="btn btn-neutral" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} on:click={() => changePage(currentPage+1)}>›</button>
+    <button class="btn btn-neutral" class:btn-disabled={currentPage >= Math.ceil(libraryItems.length/itemsPerPage)} on:click={() => changePage(Math.ceil(libraryItems.length/itemsPerPage))}>»</button>
 </div>
 
 <div class="text-center mt-4 mb-8">
@@ -89,9 +89,3 @@
         </div>
     </div>
 </div>
-
-<style>
-.table th:first-child { /* This hack is needed as a workaround. Issue: https://github.com/saadeghi/daisyui/issues/665 */
-     position: relative !important;
-}
-</style>

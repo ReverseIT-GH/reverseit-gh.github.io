@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply text-reverseit-default;
+  }
   h1 {
     @apply text-2xl;
   }

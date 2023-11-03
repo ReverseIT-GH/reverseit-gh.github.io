@@ -21,7 +21,7 @@
         {/await}
     </div>
     <div class="flex-none">
-        <ul class="menu menu-horizontal p-0">
+        <ul class="menu menu-horizontal p-0 text-base">
         <li><a href="{base}/">Home</a></li>
         <li><a href="{base}/library">Library</a></li>
         <li><a href="{base}/faq">FAQ</a></li>

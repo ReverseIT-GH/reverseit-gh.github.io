@@ -6,7 +6,7 @@
 
 <div class="collapse collapse-arrow m-0.5">
     <input type="checkbox" /> 
-    <div class="collapse-title text-primary-content text-xl font-medium">
+    <div class="collapse-title text-reverseit-faq-title text-xl font-medium">
         {@html faqTitle}
     </div>
     <div class="collapse-content"> 

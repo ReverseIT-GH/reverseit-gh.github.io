@@ -21,19 +21,19 @@
     }
 </script>
 
-<tr class="hover">
-    <td class="min-w-[12rem] whitespace-normal">
+<tr class="hover:bg-base-300">
+    <td class="min-w-[14rem] whitespace-normal">
         <a class="link" href="{libraryItem.download_url}" target="_blank" rel="noreferrer">{libraryItem.title}</a>
     </td>
-    <td class="min-w-[12rem] whitespace-normal">
+    <td class="min-w-[14rem] whitespace-normal">
         {libraryItem.description}
     </td>
-    <td class="text-center">
+    <td class="text-center min-w-[10rem]">
         {#each libraryItem.categories as category}
             <button class="link" on:click="{() => filterByCategory(category)}">{category}</button><br>
         {/each}
     </td>
-    <td class="text-center">
+    <td class="text-center min-w-[10rem]">
         <button class="link" on:click="{() => filterByAuthor(libraryItem.author)}">{libraryItem.author}</button>
     </td>
     <td>
